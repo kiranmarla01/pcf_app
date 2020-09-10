@@ -28,22 +28,22 @@ public class VaultpcfApplication {
 
 @RestController
 class SecretGrabberController {
-    
+
     @RequestMapping("/{app}")
     String strapp(@PathVariable String app){
-    	
+
     	String secretPath = "secret/";
-        
-    	// (1) Instantiate an object that contains the Vault Configuration 
+
+    	// (1) Instantiate an object that contains the Vault Configuration
     	AbstractVaultConfiguration vaultConfig = new AppConfiguration();
-    	
+
     	// (2) Pass the Vault Configuration to the Vault Template Object
     	VaultTemplate vaultTemplate = new VaultTemplate(vaultConfig.vaultEndpoint(),vaultConfig.clientAuthentication());
-   
-    	// (3) Vault Template Object will read the secret using secretPath.  The secrets will be placed 
+
+    	// (3) Vault Template Object will read the secret using secretPath.  The secrets will be placed
     	// in the Secrets object
     	VaultResponseSupport<Secrets> response = vaultTemplate.read(secretPath + app, Secrets.class);
-          	
+
     	// (4) Returns the secrets
     	return "App: " + app + "<br><u><Secrets</u><br>Username: " + response.getData().getUsername();
     }

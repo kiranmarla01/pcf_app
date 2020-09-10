@@ -1,4 +1,4 @@
-package com.hashicorp.vault;
+package com.ford.vaultteam.vaultpcf;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.vault.authentication.ClientAuthentication;
@@ -16,7 +16,7 @@ public class AppConfiguration extends AbstractVaultConfiguration {
 
   @Override
   public VaultEndpoint vaultEndpoint() {
-    
+
 	scheme = "https";
     host = "vaultdev.app.ford.com";
     VaultEndpoint endpoint = new VaultEndpoint();
@@ -30,7 +30,7 @@ public class AppConfiguration extends AbstractVaultConfiguration {
   public ClientAuthentication clientAuthentication() {
 
     role = "flasktest";
-    
+
     PcfAuthenticationOptions.PcfAuthenticationOptionsBuilder builder =
         PcfAuthenticationOptions.builder().role(role).path("pcf_testing_space/kv/test");
 
