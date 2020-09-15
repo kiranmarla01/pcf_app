@@ -1,4 +1,4 @@
-package com.hashicorp.vault;
+package com.ford.vaultteam.vaultpcf;
 
 public class Secrets {
 

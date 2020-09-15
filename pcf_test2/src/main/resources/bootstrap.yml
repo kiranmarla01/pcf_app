@@ -1,2 +1,13 @@
 spring.application.name: vaultteam-service-vaultpcf
-
+spring.cloud.vault:
+    # uri: https://vaulttest.app.ford.com
+    host: vaulttest.app.ford.com
+    scheme: https
+    port: 443
+    authentication: PCF
+    namespace: pcf_testing_space
+    pcf:
+        role: flasktest
+        pcf-path: cf
+    kv:
+        enabled: true

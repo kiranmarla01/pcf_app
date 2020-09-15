@@ -1,7 +1,7 @@
 ---
 applications:
 - name: vaultteam-vaultpcf-dev
-  path: /Users/umarla/Documents/repos/pcf_test/build/libs/vaultteam-service-vaultpcf-build-1-gfe34361.jar
+  path: /Users/umarla/Documents/repos/pcf_test2/build/libs/vaultteam-service-vaultpcf.jar
   buildpacks:
   - java_buildpack_offline
   memory: 1G
